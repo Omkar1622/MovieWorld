@@ -5,7 +5,7 @@ import './App.css';
 import SearchIcon from './search.svg';
 
 // e8bcd7a5
-const API_URL = 'http://www.omdbapi.com?apikey=e8bcd7a5';
+const API_URL = 'https://www.omdbapi.com?apikey=e8bcd7a5';
 
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
-
+    // console.log(data);
     setMovies(data.Search);
   }
 
@@ -31,6 +31,7 @@ const App = () => {
     <div className='app'>
         <h1>MovieWorld</h1>
 
+        {/* Search bar */}
         <div className='search'>
           <input
              placeholder='Search for Movies'
@@ -46,6 +47,7 @@ const App = () => {
              />
         </div>
 
+        {/* Cards Container */}
         <div className='container'>
 
         
